@@ -47,14 +47,15 @@ Your Google Sheet must use these columns:
 Column	Name	Description
 A	Vitamin	Name of the supplement
 B	Count	Current number of pills
-C	Frequency	Days between each dose (1 = daily, 2 = every 2 days…)
-D	Last Taken	Date last reduced (auto-updated)
-E	Low Alert Sent	Boolean flag (TRUE/FALSE)
+C   Dosage    Dosage per dose
+D	Frequency	Days between each dose (1 = daily, 2 = every 2 days…)
+E	Last Taken	Date last reduced (auto-updated)
+F	Low Alert Sent	Boolean flag (TRUE/FALSE)
 
 Example:
 
-Vitamin	Count	Frequency	Last Taken	Low Alert Sent
-Vitamin C-500	100	1	2025-12-05	FALSE
-Vitamin D3	240	2	2025-12-04	FALSE
+Vitamin	        Count   Dosage	Frequency	Last Taken	Low Alert Sent
+Vitamin C-500	100	    1	    1           2025-12-05	FALSE
+Vitamin D3	    240	    1	    1           2025-12-04	FALSE
 
 (or in the xslx file)
