@@ -11,9 +11,10 @@ function dailyVitaminsCheck() {
   for (let row = 1; row < data.length; row++) {
     const name = data[row][0];
     let count = data[row][1];
-    const frequency = data[row][2];
-    const lastTaken = new Date(data[row][3]);
-    let lowAlert = data[row][4]; // TRUE/FALSE
+    let dosage = data[row][2]
+    const frequency = data[row][3];
+    const lastTaken = new Date(data[row][4]);
+    let lowAlert = data[row][5]; // TRUE/FALSE
 
     lastTaken.setHours(0, 0, 0, 0);
 
@@ -21,7 +22,7 @@ function dailyVitaminsCheck() {
 
     // Reduce only when count > 0 AND required days passed
     if (diffDays >= frequency && count > 0) {
-      count = Math.max(0, count - 1);
+      count = Math.max(0, count - dosage);
 
       sheet.getRange(row + 1, 2).setValue(count);
       sheet.getRange(row + 1, 4).setValue(today);
