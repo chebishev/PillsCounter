@@ -25,7 +25,7 @@ function dailyVitaminsCheck() {
       count = Math.max(0, count - dosage);
 
       sheet.getRange(row + 1, 2).setValue(count);
-      sheet.getRange(row + 1, 4).setValue(today);
+      sheet.getRange(row + 1, 5).setValue(today);
     }
 
     //
@@ -41,10 +41,10 @@ function dailyVitaminsCheck() {
       });
 
       // Mark alert as sent
-      sheet.getRange(row + 1, 5).setValue(true);
+      sheet.getRange(row + 1, 6).setValue(true);
 
       // Highlight row red
-      sheet.getRange(row + 1, 1, 1, 5)
+      sheet.getRange(row + 1, 1, 1, 6)
            .setBackground("#ff9999");
     }
 
@@ -53,10 +53,10 @@ function dailyVitaminsCheck() {
     //
     if (count >= THRESHOLD && lowAlert === true) {
       // Reset flag
-      sheet.getRange(row + 1, 5).setValue(false);
+      sheet.getRange(row + 1, 6).setValue(false);
 
       // Remove highlight
-      sheet.getRange(row + 1, 1, 1, 5)
+      sheet.getRange(row + 1, 1, 1, 6)
            .setBackground(null);
     }
 
@@ -64,10 +64,10 @@ function dailyVitaminsCheck() {
     // 3) Apply highlight for ongoing low stock
     //
     if (count < THRESHOLD) {
-      sheet.getRange(row + 1, 1, 1, 5)
+      sheet.getRange(row + 1, 1, 1, 6)
            .setBackground("#ff9999");
     } else {
-      sheet.getRange(row + 1, 1, 1, 5)
+      sheet.getRange(row + 1, 1, 1, 6)
            .setBackground(null);
     }
   }
